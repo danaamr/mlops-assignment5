@@ -1,9 +1,9 @@
 import mlflow
+import os
 
-# use GitHub secret later
-mlflow.set_tracking_uri("file:./mlruns")
+mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "file:mlruns"))
 
-accuracy = 0.9  # change later
+accuracy = 0.9  
 
 print("Training model...")
 
