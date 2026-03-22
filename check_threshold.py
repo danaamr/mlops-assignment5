@@ -10,7 +10,7 @@ with open("model_info.txt") as f:
 print("Run ID:", run_id)
 print("Checking model performance")
 
-accuracy = float(os.getenv("ACCURACY", 0.9))
+accuracy = float(os.getenv("ACCURACY", 0.8))
 
 print("Accuracy:", accuracy)
 
