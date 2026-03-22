@@ -6,7 +6,6 @@ on:
   pull_request:
 
 jobs:
-
   validate:
     runs-on: ubuntu-latest
     env:
@@ -38,7 +37,6 @@ jobs:
           name: model-info
           path: model_info.txt
 
-
   deploy:
     needs: validate
     runs-on: ubuntu-latest
@@ -68,4 +66,5 @@ jobs:
         run: python check_threshold.py
 
       - name: Mock Docker build
-        run: echo "Building Docker image for Run ID: $(cat model_info.txt)"
+        run: |
+          echo "Building Docker image for Run ID: $(cat model_info.txt)"
